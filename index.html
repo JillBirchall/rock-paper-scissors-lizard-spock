@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors Lizard Spock</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -14,13 +14,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <h1 class="title">Rock Paper Scissors Lizard Spock</h1>
-        <div class="game-options">
-        <p class="text">Select an option:</p>
+      <h1 class="title">Rock Paper Scissors Lizard Spock</h1>
+      <div class="game-options">
+        <p class="text" id="optionText">Select an option:</p>
         <div class="option-buttons-container">
           <button class="option-button" data-option="rock">✊</button>
           <button class="option-button" data-option="paper">✋</button>
@@ -28,11 +35,13 @@
           <button class="option-button" data-option="lizard">🦎</button>
           <button class="option-button" data-option="spock">🖖</button>
         </div>
-        <button class="play-btn">Play!</button>
+      </div>
+      <div class="game-results hide" id="gameResults">
+        <div class="result right" id="playerHand" data-hand>👊</div>
+        <p class="text game-text" id="gameText">3</p>
+        <div class="result" id="opponentHand" data-hand>👊</div>
+      </div>
+      <button class="play-again-btn hide" id="playAgainBtn">Play Again</button>
     </div>
-    <div class="game-results">
-        <div class="result right">👊</div><p class="game-text">3</p><div class="result">👊</div>
-    </div>
-    </div>
-</body>
+  </body>
 </html>
