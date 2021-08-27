@@ -3,27 +3,42 @@ $(document).ready(function () {
     {
       name: "rock",
       symbol: "✊",
-      defeats: ["lizard", "scissors"],
+      defeats: [
+        { name: "lizard", reason: "crushes" },
+        { name: "scissors", reason: "crushes" },
+      ],
     },
     {
       name: "paper",
       symbol: "✋",
-      defeats: ["rock", "spock"],
+      defeats: [
+        { name: "rock", reason: "covers" },
+        { name: "spock", reason: "disproves" },
+      ],
     },
     {
       name: "scissors",
       symbol: "✌️",
-      defeats: ["paper", "lizard"],
+      defeats: [
+        { name: "paper", reason: "cuts" },
+        { name: "lizard", reason: "decapitates" },
+      ],
     },
     {
       name: "lizard",
       symbol: "🦎",
-      defeats: ["paper", "spock"],
+      defeats: [
+        { name: "spock", reason: "poisons" },
+        { name: "paper", reason: "eats" },
+      ],
     },
     {
       name: "spock",
       symbol: "🖖",
-      defeats: ["scissors", "rock"],
+      defeats: [
+        { name: "scissors", reason: "smashes" },
+        { name: "rock", reason: "vaporizes" },
+      ],
     },
   ];
 
@@ -34,7 +49,7 @@ $(document).ready(function () {
   $("#playAgainBtn").mouseup(resetGame);
 
   function checkWin(option1, option2) {
-    return option1.defeats.includes(option2.name);
+    return option1.defeats.find((option) => option.name === option2.name);
   }
 
   function getOpponentOption() {
@@ -42,13 +57,23 @@ $(document).ready(function () {
     return options[optionIndex];
   }
 
+  function setResultDescription(winner, loser) {
+    $("#resultDescription").text(
+      `${winner.name} ${
+        winner.defeats.find((option) => option.name === loser.name).reason
+      } ${loser.name}`
+    );
+  }
+
   function showResults(playerOption, opponentOption) {
     $("#playerHand").addClass("clear-rotate").text(playerOption.symbol);
     $("#opponentHand").addClass("clear-rotate").text(opponentOption.symbol);
     if (checkWin(playerOption, opponentOption)) {
       $("#gameText").text("You Win!");
+      setResultDescription(playerOption, opponentOption);
     } else if (checkWin(opponentOption, playerOption)) {
       $("#gameText").text("You Lose!");
+      setResultDescription(opponentOption, playerOption);
     } else {
       $("#gameText").text("It's a Draw!");
     }
@@ -85,5 +110,6 @@ $(document).ready(function () {
     $("#playAgainBtn").addClass("hide");
     $("#gameText").text(TIMER_DURATION);
     $("[data-hand]").removeClass("clear-rotate").text("👊");
+    $("#resultDescription").text("");
   }
 });

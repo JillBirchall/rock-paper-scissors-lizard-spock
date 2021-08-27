@@ -21,6 +21,7 @@ body {
 
 .text {
   font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
 }
 
 .game-options {
