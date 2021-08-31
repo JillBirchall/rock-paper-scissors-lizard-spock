@@ -85,27 +85,22 @@ $(document).ready(function () {
       (option) => option.name === $(this).attr("data-option")
     );
     const opponentOption = getOpponentOption();
-    $("[data-option]").hide();
-    $("#optionText").hide();
+    $("#gameOptions").addClass("hide");
     $("#gameResults").removeClass("hide");
-    $("[data-hand]").effect(
-      "shake",
-      { direction: "up", times: 10, distance: 20 },
-      3000
-    );
+    $("#gameText").removeClass("hide");
     let timerInterval = setInterval(() => {
       $("#gameText").text(--timer);
     }, 1000);
     setTimeout(() => {
       clearInterval(timerInterval);
       showResults(playerOption, opponentOption);
+      $("#playAgainBtn").removeClass("hide");
     }, 3000);
-    $("#playAgainBtn").removeClass("hide");
   }
 
   function resetGame() {
-    $("[data-option]").show();
-    $("#optionText").show();
+    $("#gameOptions").removeClass("hide");
+    $("#gameText").addClass("hide");
     $("#gameResults").addClass("hide");
     $("#playAgainBtn").addClass("hide");
     $("#gameText").text(TIMER_DURATION);

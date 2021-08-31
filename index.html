@@ -26,23 +26,27 @@
   <body>
     <div class="container">
       <h1 class="title">Rock Paper Scissors Lizard Spock</h1>
-      <div class="game-options">
-        <p class="text" id="optionText">Select an option:</p>
-        <div class="option-buttons-container">
-          <button class="option-button" data-option="rock">✊</button>
-          <button class="option-button" data-option="paper">✋</button>
-          <button class="option-button" data-option="scissors">✌️</button>
-          <button class="option-button" data-option="lizard">🦎</button>
-          <button class="option-button" data-option="spock">🖖</button>
+      <div class="game">
+        <div class="game-options" id="gameOptions">
+          <p class="text">Select an option:</p>
+          <div class="option-buttons-container">
+            <button class="option-button" data-option="rock">✊</button>
+            <button class="option-button" data-option="paper">✋</button>
+            <button class="option-button" data-option="scissors">✌️</button>
+            <button class="option-button" data-option="lizard">🦎</button>
+            <button class="option-button" data-option="spock">🖖</button>
+          </div>
         </div>
+        <p class="text game-text hide" id="gameText">3</p>
+        <p class="text" id="resultDescription"></p>
+        <div class="game-results hide" id="gameResults">
+          <div class="result right shake" id="playerHand" data-hand>👊</div>
+          <div class="result" id="opponentHand" data-hand>👊</div>
+        </div>
+        <button class="play-again-btn hide" id="playAgainBtn">
+          Play Again
+        </button>
       </div>
-      <div class="game-results hide" id="gameResults">
-        <div class="result right" id="playerHand" data-hand>👊</div>
-        <p class="text game-text" id="gameText">3</p>
-        <div class="result" id="opponentHand" data-hand>👊</div>
-      </div>
-      <p class="text" id="resultDescription"></p>
-      <button class="play-again-btn hide" id="playAgainBtn">Play Again</button>
     </div>
   </body>
 </html>
