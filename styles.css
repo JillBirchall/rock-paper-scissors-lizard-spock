@@ -15,8 +15,12 @@ body {
 .title {
   font-family: "Play", sans-serif;
   font-size: 24px;
-  margin: 20px 10px 50px 10px;
+  margin: 0 10px 50px 10px;
+  padding: 20px 0;
   text-align: center;
+  background-color: blueviolet;
+  color: white;
+  width: 100%;
 }
 
 .text {
