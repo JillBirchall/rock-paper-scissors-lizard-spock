@@ -14,11 +14,12 @@ body {
 
 .title {
   font-family: "Play", sans-serif;
-  font-size: 24px;
-  margin: 0 10px 50px 10px;
+  font-size: 20px;
+  margin: 0 10px 10px 10px;
   padding: 20px 0;
   text-align: center;
-  background-color: blueviolet;
+  background-color: #3205f5;
+  background-image: linear-gradient(to right, #3205f5, #af10e8);
   color: white;
   width: 100%;
 }
@@ -27,6 +28,11 @@ body {
   font-family: "Roboto", sans-serif;
   text-transform: capitalize;
   margin: 0;
+}
+
+.option-text {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
 }
 
 .game {
@@ -54,15 +60,11 @@ body {
   margin-bottom: 50px;
 }
 
-.option-button:hover {
-  transform: scale(1.2);
-}
-
 .play-again-btn {
   height: 50px;
   width: 120px;
   border: none;
-  background-color: rgb(161, 99, 219);
+  background-color: #3205f5;
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -71,10 +73,6 @@ body {
   -moz-border-radius: 9999px;
   -ms-border-radius: 9999px;
   -o-border-radius: 9999px;
-}
-
-.play-again-btn:hover {
-  cursor: pointer;
 }
 
 .game-results {
@@ -114,18 +112,43 @@ body {
 .game-text {
   font-size: 24px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .hide {
   display: none;
 }
 
+@media (hover: hover) {
+  .option-button:hover {
+    transform: scale(1.2);
+  }
+
+  .play-again-btn:hover {
+    cursor: pointer;
+    border: 1px solid #3205f5;
+    color: #3205f5;
+    background-color: white;
+  }
+}
+
 @media (min-width: 576px) {
+  .title {
+    font-size: 24px;
+  }
+
   .game-results {
     width: 50vw;
   }
 
   .game-text {
     font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 28px;
+    margin: 0 10px 50px 10px;
   }
 }
