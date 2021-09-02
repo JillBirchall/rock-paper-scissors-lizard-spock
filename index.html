@@ -35,8 +35,14 @@
         <p class="text game-text hide" id="gameText">3</p>
         <p class="text" id="resultDescription"></p>
         <div class="game-results hide" id="gameResults">
-          <div class="result right shake" id="playerHand" data-hand>👊</div>
-          <div class="result" id="opponentHand" data-hand>👊</div>
+          <div>
+            <div class="result right-hand" id="playerHand" data-hand>👊</div>
+            <p class="text result-label">Player</p>
+          </div>
+          <div>
+            <div class="result" id="opponentHand" data-hand>👊</div>
+            <p class="text result-label">Opponent</p>
+          </div>
         </div>
         <button class="play-again-btn hide" id="playAgainBtn">
           Play Again

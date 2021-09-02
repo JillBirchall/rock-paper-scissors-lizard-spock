@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #3205f5;
+  --secondary-color: #af10e8;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -18,8 +23,12 @@ body {
   margin: 0 10px 10px 10px;
   padding: 20px 0;
   text-align: center;
-  background-color: #3205f5;
-  background-image: linear-gradient(to right, #3205f5, #af10e8);
+  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   width: 100%;
 }
@@ -41,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .game-options {
@@ -64,7 +74,7 @@ body {
   height: 50px;
   width: 120px;
   border: none;
-  background-color: #3205f5;
+  background-color: var(--primary-color);
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -83,6 +93,11 @@ body {
   width: 100vw;
 }
 
+.result-label {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .result {
   font-size: 56px;
   transform: rotate(90deg);
@@ -93,7 +108,7 @@ body {
   text-align: center;
 }
 
-.result.right {
+.result.right-hand {
   transform: rotate(-90deg) scaleX(-1);
   -webkit-transform: rotate(-90deg) scaleX(-1);
   -moz-transform: rotate(-90deg) scaleX(-1);
@@ -126,8 +141,8 @@ body {
 
   .play-again-btn:hover {
     cursor: pointer;
-    border: 1px solid #3205f5;
-    color: #3205f5;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background-color: white;
   }
 }
@@ -149,6 +164,13 @@ body {
 @media (min-width: 768px) {
   .title {
     font-size: 28px;
-    margin: 0 10px 50px 10px;
+  }
+
+  .option-button {
+    font-size: 48px;
+  }
+
+  .result {
+    font-size: 72px;
   }
 }
